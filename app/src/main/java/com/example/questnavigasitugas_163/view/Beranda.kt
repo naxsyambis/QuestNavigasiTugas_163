@@ -32,7 +32,6 @@ fun Beranda(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Gambar Logo
             Image(
                 painter = painterResource(id = R.drawable.logo_aplikasi),
                 contentDescription = stringResource(R.string.deskripsi_logo),
@@ -41,7 +40,6 @@ fun Beranda(
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Teks Selamat Datang
             Text(
                 text = stringResource(R.string.selamat_datang),
                 style = MaterialTheme.typography.headlineLarge,
@@ -49,7 +47,28 @@ fun Beranda(
                 textAlign = TextAlign.Center
             )
 
+            Spacer(modifier = Modifier.height(24.dp))
 
+            Text(
+                text = stringResource(R.string.dibuat_oleh),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center
+            )
+
+            Spacer(modifier = Modifier.height(48.dp))
+
+            Button(
+                onClick = onMasukClick,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.masuk),
+                    style = MaterialTheme.typography.titleMedium
+                )
+            }
         }
     }
 }
