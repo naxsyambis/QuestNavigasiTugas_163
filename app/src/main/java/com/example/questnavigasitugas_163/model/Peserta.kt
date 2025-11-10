@@ -6,3 +6,7 @@ data class Peserta(
     val status: String,
     val alamat: String
 )
+
+object DataPeserta {
+
+}
