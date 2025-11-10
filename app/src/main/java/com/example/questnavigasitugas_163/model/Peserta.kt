@@ -21,6 +21,23 @@ object DataPeserta {
             status = "Belum Kawin",
             alamat = "Bantul"
         ),
-
+        Peserta(
+            nama = "Haris Setyawan",
+            jenisKelamin = "Laki-laki",
+            status = "Kawin",
+            alamat = "Jogja"
+        ),
+        Peserta(
+            nama = "Haris Setyawan",
+            jenisKelamin = "Laki-laki",
+            status = "Kawin",
+            alamat = "Jogja"
+        ),
+        Peserta(
+            nama = "Dwijoko Purbohadi",
+            jenisKelamin = "Laki-laki",
+            status = "Belum Kawin",
+            alamat = "Bantul"
+        )
     )
 }
