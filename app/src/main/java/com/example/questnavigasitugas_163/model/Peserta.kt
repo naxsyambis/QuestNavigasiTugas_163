@@ -8,5 +8,19 @@ data class Peserta(
 )
 
 object DataPeserta {
+    val daftarPeserta = listOf(
+        Peserta(
+            nama = "Asroni Sukirman",
+            jenisKelamin = "Laki-laki",
+            status = "Cerai",
+            alamat = "Sleman"
+        ),
+        Peserta(
+            nama = "Aprilia Kurnianti",
+            jenisKelamin = "Perempuan",
+            status = "Belum Kawin",
+            alamat = "Bantul"
+        ),
 
+    )
 }
