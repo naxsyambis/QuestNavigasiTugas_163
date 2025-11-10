@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_kecil">8dp</dimen>
+    <dimen name="padding_sedang">16dp</dimen>
+    <dimen name="padding_besar">24dp</dimen>
+    <dimen name="padding_sangat_besar">32dp</dimen>
+    <dimen name="tinggi_tombol">56dp</dimen>
+    <dimen name="ukuran_logo">120dp</dimen>
+    <dimen name="elevasi_kartu">4dp</dimen>
+</resources>
