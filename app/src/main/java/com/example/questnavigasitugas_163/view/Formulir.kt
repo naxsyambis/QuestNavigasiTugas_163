@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
@@ -122,5 +123,32 @@ fun Formulir(
                     .menuAnchor()
             )
 
+            ExposedDropdownMenu(
+                expanded = dropdownExpanded,
+                onDismissRequest = { dropdownExpanded = false }
+            ) {
+                opsiStatus.forEach { opsi ->
+                    DropdownMenuItem(
+                        text = { Text(opsi) },
+                        onClick = {
+                            statusPerkawinan = opsi
+                            dropdownExpanded = false
+                        }
+                    )
+                }
+            }
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // Input Alamat
+            OutlinedTextField(
+                value = alamat,
+                onValueChange = { alamat = it },
+                label = { Text(stringResource(R.string.alamat)) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(100.dp),
+                maxLines = 3
+            )
+        }
     }
 }
