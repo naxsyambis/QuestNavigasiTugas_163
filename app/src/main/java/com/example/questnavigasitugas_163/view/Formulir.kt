@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -100,5 +102,25 @@ fun Formulir(
                 modifier = Modifier.padding(start = 8.dp)
             )
         }
+        Spacer(modifier = Modifier.height(20.dp))
+
+        // Input Status Perkawinan (Dropdown)
+        ExposedDropdownMenuBox(
+            expanded = dropdownExpanded,
+            onExpandedChange = { dropdownExpanded = !dropdownExpanded }
+        ) {
+            OutlinedTextField(
+                value = statusPerkawinan,
+                onValueChange = {},
+                readOnly = true,
+                label = { Text(stringResource(R.string.status_perkawinan)) },
+                trailingIcon = {
+                    ExposedDropdownMenuDefaults.TrailingIcon(expanded = dropdownExpanded)
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .menuAnchor()
+            )
+
     }
 }
