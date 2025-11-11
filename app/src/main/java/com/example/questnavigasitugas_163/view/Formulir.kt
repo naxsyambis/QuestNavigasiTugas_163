@@ -1,6 +1,8 @@
 package com.example.questnavigasitugas_163.view
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,11 +11,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
@@ -149,6 +153,31 @@ fun Formulir(
                     .height(100.dp),
                 maxLines = 3
             )
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            // Tombol Aksi
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                OutlinedButton(onClick = onKembaliClick) {
+                    Text(stringResource(R.string.kembali))
+                }
+
+                Button(
+                    onClick = {
+                        if (nama.isNotEmpty() && jenisKelamin.isNotEmpty() &&
+                            statusPerkawinan.isNotEmpty() && alamat.isNotEmpty()) {
+                            tampilDialog = true
+                        }
+                    },
+                    enabled = nama.isNotEmpty() && jenisKelamin.isNotEmpty() &&
+                            statusPerkawinan.isNotEmpty() && alamat.isNotEmpty()
+                ) {
+                    Text(stringResource(R.string.submit))
+                }
+            }
         }
     }
 }
