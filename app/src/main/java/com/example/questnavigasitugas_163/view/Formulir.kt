@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -179,5 +180,31 @@ fun Formulir(
                 }
             }
         }
+    }
+    if (tampilDialog) {
+        AlertDialog(
+            onDismissRequest = { tampilDialog = false },
+            title = { Text(stringResource(R.string.data_berhasil_disimpan)) },
+            text = {
+                Column {
+                    Text("${stringResource(R.string.nama_lengkap)}: $nama")
+                    Text("${stringResource(R.string.jenis_kelamin)}: $jenisKelamin")
+                    Text("${stringResource(R.string.status_perkawinan)}: $statusPerkawinan")
+                    Text("${stringResource(R.string.alamat)}: $alamat")
+                }
+            },
+            confirmButton = {
+                Button(onClick = {
+                    tampilDialog = false
+                    // Reset form
+                    nama = ""
+                    jenisKelamin = ""
+                    statusPerkawinan = ""
+                    alamat = ""
+                }) {
+                    Text(stringResource(R.string.ok))
+                }
+            }
+        )
     }
 }
