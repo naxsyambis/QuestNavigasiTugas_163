@@ -110,6 +110,20 @@ fun KartuPeserta(peserta: Peserta) {
                     value = peserta.status
                 )
             }
+
+            Column(
+                modifier = Modifier.weight(1f), // Ambil setengah lebar
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ){
+                KolomInfo(
+                    label = stringResource(R.string.jenis_kelamin),
+                    value = peserta.jenisKelamin
+                )
+                KolomInfo(
+                    label = stringResource(R.string.alamat),
+                    value = peserta.alamat
+                )
+            }
         }
     }
 }
