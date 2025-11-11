@@ -90,5 +90,13 @@ fun KartuPeserta(peserta: Peserta) {
             containerColor = MaterialTheme.colorScheme.surface,
             contentColor = MaterialTheme.colorScheme.onSurface
         )
-    ) {}
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ){
+
+        }
+    }
 }
