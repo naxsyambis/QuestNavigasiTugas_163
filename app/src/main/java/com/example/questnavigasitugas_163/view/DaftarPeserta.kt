@@ -22,6 +22,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.questnavigasitugas_163.R
 import com.example.questnavigasitugas_163.model.DataPeserta
@@ -125,5 +126,23 @@ fun KartuPeserta(peserta: Peserta) {
                 )
             }
         }
+    }
+}
+
+@Composable
+fun KolomInfo(label: String, value: String) {
+    // Tidak ada perubahan di sini, sudah benar
+    Column {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+        Text(
+            text = value,
+            style = MaterialTheme.typography.bodyLarge,
+            fontWeight = FontWeight.Medium,
+            color = MaterialTheme.colorScheme.onSurface
+        )
     }
 }
