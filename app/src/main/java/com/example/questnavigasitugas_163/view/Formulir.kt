@@ -6,11 +6,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -86,6 +88,16 @@ fun Formulir(
                 text = stringResource(R.string.jenis_kelamin),
                 style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurface
+            )
+            Spacer(modifier = Modifier.width(24.dp))
+
+            RadioButton(
+                selected = jenisKelamin == "Perempuan", // ✅ DIPERBAIKI
+                onClick = { jenisKelamin = "Perempuan" } // ✅ DIPERBAIKI
+            )
+            Text(
+                stringResource(R.string.perempuan), // Label tetap pakai string resource
+                modifier = Modifier.padding(start = 8.dp)
             )
         }
     }
