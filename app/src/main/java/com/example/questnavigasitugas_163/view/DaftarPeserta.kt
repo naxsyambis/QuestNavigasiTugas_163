@@ -1,6 +1,7 @@
 package com.example.questnavigasitugas_163.view
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -96,7 +97,19 @@ fun KartuPeserta(peserta: Peserta) {
                 .fillMaxWidth()
                 .padding(16.dp)
         ){
-
+            Column(
+                modifier = Modifier.weight(1f), // Ambil setengah lebar
+                verticalArrangement = Arrangement.spacedBy(12.dp) // Beri jarak antar item
+            ) {
+                KolomInfo(
+                    label = stringResource(R.string.nama_lengkap),
+                    value = peserta.nama
+                )
+                KolomInfo(
+                    label = stringResource(R.string.status_perkawinan),
+                    value = peserta.status
+                )
+            }
         }
     }
 }
